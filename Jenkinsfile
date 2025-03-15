@@ -1,17 +1,10 @@
 pipeline {
     agent any
     stages {
-       // stage('Clone repository') {
-          //  steps {
-                // checkout([$class: 'GitSCM',
-                // branches: [[name: '*/main']],
-                // userRemoteConfigs: [[url: 'https://github.com/Jatinsharma159/Jenkins.git']]])
-            //}
-        //}
         stage('Build') {
             steps {
                 build 'PES1UG22CS582-1'
-                sh 'g++ ./main/hello.cpp -o hello_exec'
+                sh 'g++ ./main/hello.cpp -o '  // Intentional error: Missing executable name
                 sh 'chmod +x hello_exec'
             }
         }
